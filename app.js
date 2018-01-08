@@ -8,3 +8,17 @@ $.get('https://dc-th-booklist.herokuapp.com/test')
   .always(function(){
     console.log('Always Run');
   });
+
+  function getDogs(){
+    $.getJSON('/books').then(results => {
+      showBooks(results);
+    });
+  }
+
+  function showBooks(books){
+    var $ul = $('#books-list')
+    $ul.empty()
+    books.forEach(books =>{
+        $ul.append(`<li> ${books.author}, ${books.title}, ${books.isbn}, ${books.img_url}</li>`)
+    })
+}
