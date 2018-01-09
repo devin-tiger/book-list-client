@@ -7,21 +7,22 @@
     <title>Devin Tiger Book List</title>
 </head>
 <body>
-    <h1>Test H1</h1>
-    <h2>Test H2</h2>
-    <p>Test Paragraph Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto enim repellat modi? Corporis aliquid porro earum sapiente ex, ut itaque a! Aliquam ea suscipit, sequi quaerat aspernatur saepe necessitatibus commodi.</p>
-
-    <section id="book-list">
+    <section>
+        <ul id="book-list"></ul>
 
     </section>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="scripts/models/book.js"></script>
+    <!-- <script src="scripts/models/book.js"></script> -->
     <script>
-    var __API_URL__ = "https://dc-th-booklist.herokuapp.com"
+    let __API_URL__ = "https://dc-th-booklist.herokuapp.com/api/v1/books"
+    // var __API_URL__ = 'http://localhost:3000/api/v1/books'
 
     $.getJSON(__API_URL__).then(results =>{
         console.log(results)
+        results.forEach(bookData => {
+            $('#book-list').append(`<p>Book Title: ${bookData.title}</p><br><p>Book Author: ${bookData.author}</p>`)
+        })
     })
     </script>
 </body>
