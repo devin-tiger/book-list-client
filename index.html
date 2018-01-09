@@ -16,6 +16,13 @@
     </section>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="app.js"></script>
+    <script src="scripts/models/book.js"></script>
+    <script>
+    var __API_URL__ = "https://dc-th-booklist.herokuapp.com"
+
+    $.getJSON(__API_URL__).then(results =>{
+        console.log(results)
+    })
+    </script>
 </body>
 </html>
