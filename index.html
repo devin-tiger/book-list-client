@@ -12,37 +12,26 @@
         <h3 id="book-count"></h3>
     </section>
 
-    <section class="error-view container">
-        <h1 id="error-message">Error</h1>
-    </section>
-    
+    <section id="book-list-page" class="page">book list</section>
+    <ul id="book-list">
+
+    </ul>
+    <section id="book-detail-page" class="page">book detail</section>
+
+    <section id="book-create-page" class="page">book form</section>
+
+    <section id="error-page" class="page">ERROR</section>
+
+      
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="scripts/models/book.js"></script>
-    <script>
-    let __API_URL__ = "https://dc-th-booklist.herokuapp.com/api/v1/books"
-    // let __API_URL__ = 'http://localhost:3000/api/v1/books'
-
-    $('.error-view').hide()
+    <script src="scripts/views/book-list-page.js"></script>    
+    <script src="scripts/views/book-detail-page.js"></script>    
+    <script src="scripts/controllers/routes.js"></script>
     
 
-    $.getJSON(__API_URL__).then(results =>{
-        console.log(results)
-        results.forEach(bookData => {
-            $('#book-list').append(`<p>Book Title: ${bookData.title} <br> Book Author: ${bookData.author}</p>`)
-        })
-
-        $('#book-count').append(`<p>Book Count: ${results.length}</p>`)
-    })
-
-    var errorView = {}
-
-    errorView.initErrorPage = (err) => {
-        $('.container').hide()
-        $('.error-view').show()
-        $('#error-message').empty()
-    }
     </script>
 </body>
 </html>
