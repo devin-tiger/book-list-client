@@ -7,23 +7,40 @@
     <title>Devin Tiger Book List</title>
 </head>
 <body>
-    <section>
+    <section class="bookshelf container">
         <ul id="book-list"></ul>
+        <h3 id="book-count"></h3>
+    </section>
 
+    <section class="error-view container">
+        <h1 id="error-message">Error</h1>
     </section>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- <script src="scripts/models/book.js"></script> -->
+    <script src="scripts/models/book.js"></script>
     <script>
     let __API_URL__ = "https://dc-th-booklist.herokuapp.com/api/v1/books"
     // var __API_URL__ = 'http://localhost:3000/api/v1/books'
 
+    $('.error-view').hide()
+    
+
     $.getJSON(__API_URL__).then(results =>{
         console.log(results)
         results.forEach(bookData => {
-            $('#book-list').append(`<p>Book Title: ${bookData.title}</p><br><p>Book Author: ${bookData.author}</p>`)
+            $('#book-list').append(`<p>Book Title: ${bookData.title} <br> Book Author: ${bookData.author}</p>`)
         })
+
+        $('#book-count').append(`<p>Book Count: ${results.length}</p>`)
     })
+
+    var errorView = {}
+
+    errorView.initErrorPage = (err) => {
+        $('.container').hide()
+        $('.error-view').show()
+        $('#error-message').empty()
+    }
     </script>
 </body>
 </html>
