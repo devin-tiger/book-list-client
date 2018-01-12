@@ -1,26 +1,35 @@
-$.get('https://dc-th-booklist.herokuapp.com')
-  .done(function (){
-    console.log('Success');
-  })
-  .fail(function(err){
-    console.log('error:', err);
-  })
-  .always(function(){
-    console.log('Always Run');
-  });
+// $.getJSON(__API_URL__).then(results => {
+//   console.log(results)
+//   results.forEach(bookData => {
+//     $('#book-list').append(`<p>Book Title: ${bookData.title} <br> Book Author: ${bookData.author}</p>`)
+//   })
 
-/////
+//   $('#book-count').append(`<p>Book Count: ${results.length}</p>`)
+// })
+
 var app = app || {};
-const _API_URL_ = localStorage
 
-function Book () {
+(module => {
 
-}
+  // const __API_URL__ = "https://dc-th-booklist.herokuapp.com/api/v1/books"
+  const __API_URL__ = "http://localhost:3000"
 
-book.all =[]
-book.fetchAll = () => $getJSON(_API_URL_)
-book.fetchON =(id) => $getJSON(_API_URL_ + '/' + id)
- 
-module.Book = Book
+  function Book(){
 
-(app)
+  }
+
+  Book.all = []
+
+  Book.fetchAll = () => $.getJSON(__API_URL__).catch(err)
+  Book.fetchOne = (id) => $.getJSON(__API_URL__ + '/' + id).catch(err)
+
+  Book.deleteOne = id => {
+    return ajax({
+      url: __API_URL__ + '/' + id,
+      method: 'DELETE'
+    }).catch(err)
+  }
+
+  module.Book = Book
+
+})(app)
