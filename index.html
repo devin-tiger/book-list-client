@@ -16,59 +16,35 @@
         <ul><a href="/">Home</a></ul>
         <ul><a href="/books/:id">Book ID</a></ul>
         <ul><a href="/books/create">Create</a></ul>
+        <ul><a href="/login">Login</a></ul>        
         <ul><a href="/error">Error</a></ul>
     </nav>
-    <section class="bookshelf container">
-        <ul id="book-list"></ul>
-        <ul id ="book-list"> books here </ul>
-        <h3 id="book-count"></h3>
-    </section>
 
-    <section id="book-list-page" class="page">book list
-        <ul id="book-list">
-        </ul>
-    </section>
-<section id ="book-list-page" class = "page">book list</section>
-<section id ="book-detail-page" class = "page">book list</section>
-<section id ="book-create-page" class = "page">book</section>
-<section id ="book-error-page" class = "page">error</section>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="scripts/models/book.js"></script>
-
-    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.amd.min.js"></script>
-    <script>
-    let __API_URL__ = "https://dc-th-booklist.herokuapp.com/api/v1/books"
-    // var __API_URL__ = 'http://localhost:3000/api/v1/books'
-
-    $('.error-view').hide()
-
+    <section id ="book-detail-page" class = "page">book list</section>
+    <section id ="book-create-page" class = "page">book</section>
+    <section id ="book-update-page" class = "page">book update</section>
+    <section id ="book-error-page" class = "page">error</section>
     <section id="book-create-page" class="page">book form
-
         <form action="">
             <input type="text" placeholder="title">
             <button type="submit">Submit</button>
         </form>
     </section>
 
+    <section id="book-admin-page" class="page">Admin</section>
+
     <section id="error-page" class="page">ERROR</section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+    
     <script src="scripts/models/book.js"></script>
     <script src="scripts/views/book-list-page.js"></script>    
     <script src="scripts/views/book-detail-page.js"></script>    
-    <script src="scripts/views/book-create-page.js"></script>    
+    <script src="scripts/views/book-create-page.js"></script>
+    <script src="scripts/views/book-update-page.js"></script>         
     <script src="scripts/controllers/routes.js"></script>
-      
-    errorView.initErrorPage = (err) => {
-        $('.container').hide()
-        $('.error-view').show()
-        $('#error-message').empty()
-    }
-    
 
     <!-- document.ready (); or remember to load page by list first, the load all your functions.  -->
 </body>
