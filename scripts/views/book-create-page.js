@@ -6,7 +6,12 @@ var app = app || {};
 
     const $page = $('#book-create-page')
 
-    bookCreatePage.init = () => $page.show()
+    
+
+    bookCreatePage.init  = () => {
+        $page.show()
+         console.log('create page hello')
+    } 
 
     module.bookCreatePage = bookCreatePage
 
