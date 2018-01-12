@@ -9,6 +9,7 @@ var app = app || {};
         $('.page').hide()
         $('#book-details').append(`<li data-id="${book.id}">${book.title}:${book.author}:<img src="${book.image_url}"></li>`)
 
+
     }
     $view.show()
         module.bookDetailPage = bookDetailPage
