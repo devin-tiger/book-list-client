@@ -7,7 +7,7 @@ var app = app || {};
 
     bookDetailPage.init = (book) => {
         $('.page').hide()
-        $('#book-details').append(`<li data-id="${book.id}">${book.title}:${book.author}:<img src="${book.img_url}"></li>`)
+        $('#book-details').append(`<li data-id="${book.id}">${book.title}:${book.author}:<img src="${book.image_url}"></li>`)
 
     }
     $view.show()
