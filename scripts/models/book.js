@@ -46,22 +46,7 @@ var app = app || {};
     return $.post(__API_URL__, book).catch(errorCallback)
   }
 
-  Book.insertRecord = function(callback){
-    app.post('/api/v1/books', (req, res) =>{
-      client.query(
-        'INSERT INTO books(author, title, isbn, image_url, description) VALUES ($1, $2, $3, $4, $5) ON CONFLICT DO NOTHING', [req.body.new-author,
-          req.body.new-title,
-          req.body.new-isbn,
-          req.body.new-image_url,
-          req.body.new-description],
-          function(err){
-            if (err) console.log(err)
-            .then(console.log)
-            .then(callback)
-          }
-        )
-      })
-    }
+  
     module.Book = Book
     
 })(app)

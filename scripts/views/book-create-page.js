@@ -13,24 +13,26 @@ var app = app || {};
          console.log('create page hello')
          $('#new-book-button').on('click', (e) => {
             e.preventDefault();
-            bookCreatePage.submit();
+            submit();
             console.log('button is working')
         })
 
     } 
 
-    bookCreatePage.submit = () => {
+    function submit () {
         console.log('inside of bookCreatePage')
-        let book = new app.Book({
+        let newBook = {
             author: $('#new-author').val(),
             title: $('#new-title').val(),
             isbn: $('#new-isbn').val(),
             image_url: $('#new-image_url').val(),
             description: $('#new-description').val(),
             
-        })
-        console.log(book)
-        app.Book.insertRecord();
+        }
+        console.log(newBook)
+        app.Book.create(newBook)
+        .then(() => page('/'))
+
     }
 
     module.bookCreatePage = bookCreatePage
