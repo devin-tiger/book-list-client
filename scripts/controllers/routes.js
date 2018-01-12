@@ -1,4 +1,3 @@
-// $doument.ready = () => { wrap entire file }
 
 page('/*',(ctx,next)=> {
     $('.page').hide()
@@ -11,14 +10,17 @@ page('/', () => {
     })
 })
 
+page('/books/create', () => {
+    console.log('this is create page')
+    app.bookCreatePage.init()
+})
+
 page('/books/:id', (ctx) => {
     app.Book.fetchOne(ctx.params.id).then(book => {
         app.bookDetailPage.init(book)
     })
     
 })
-
-page('/books/create', () => app.bookCreatePage.init())
 
 page('/login', () => {
     $('#login-page').show()
