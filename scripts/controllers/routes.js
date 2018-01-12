@@ -20,9 +20,7 @@ page('/books/:id', (ctx) => {
     
 })
 
-page('/books/create', () => {
-    $('#book-create-page').show()
-})
+page('/books/create', () => app.bookCreatePage.init())
 
 page('/error', () => {
     $('#error-page').show()

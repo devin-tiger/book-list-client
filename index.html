@@ -7,18 +7,30 @@
     <title>Devin Tiger Book List</title>
 </head>
 <body>
+    <nav>
+        <ul><a href="/">Home</a></ul>
+        <ul><a href="/books/:id">Book ID</a></ul>
+        <ul><a href="/books/create">Create</a></ul>
+        <ul><a href="/error">Error</a></ul>
+    </nav>
     <section class="bookshelf container">
         <ul id="book-list"></ul>
         <h3 id="book-count"></h3>
     </section>
 
-    <section id="book-list-page" class="page">book list</section>
-    <ul id="book-list">
-
-    </ul>
+    <section id="book-list-page" class="page">book list
+        <ul id="book-list">
+        </ul>
+    </section>
     <section id="book-detail-page" class="page">book detail</section>
 
-    <section id="book-create-page" class="page">book form</section>
+    <section id="book-create-page" class="page">book form
+
+        <form action="">
+            <input type="text" placeholder="title">
+            <button type="submit">Submit</button>
+        </form>
+    </section>
 
     <section id="error-page" class="page">ERROR</section>
 
@@ -29,9 +41,7 @@
     <script src="scripts/models/book.js"></script>
     <script src="scripts/views/book-list-page.js"></script>    
     <script src="scripts/views/book-detail-page.js"></script>    
+    <script src="scripts/views/book-create-page.js"></script>    
     <script src="scripts/controllers/routes.js"></script>
-    
-
-    </script>
 </body>
 </html>
