@@ -3,9 +3,13 @@ var app = app || {};
 (module => {
     const bookListPage = {}
     bookListPage.initIndexView = (books) => {
-console.log('index view')
+
         books.forEach(book => {
-    $('#book-list').append(`<li data-id="${book.id}">${book.title}:${book.author}:<img src="${book.img_url}"></li>`)
+        $('#book-list').append(`<li data-id="${book.id}">${book.title}
+        <br>
+        ${book.author}
+        <br>
+        <img src="${book.image_url}"></li>`)
         })
 
         $('#book-list').on('click', 'li', (event) => {
