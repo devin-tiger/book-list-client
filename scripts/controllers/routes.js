@@ -1,4 +1,3 @@
-// $doument.ready = () => { wrap entire file }
 
 page('/*',(ctx,next)=> {
     $('.page').hide()
