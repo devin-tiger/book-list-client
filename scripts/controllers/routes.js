@@ -27,7 +27,7 @@ page('/login', () => {
 })
 
 page('/error', () => {
-    $('#error-page').show()
+    $('#book-error-page').show()
 })
 
 page.start()
