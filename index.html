@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/icons.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href=" styles/modules.css">
+    <link rel="stylesheet" href="styles/reset.css">
     <title>Devin Tiger Book List</title>
 </head>
 <body>
@@ -15,6 +20,7 @@
     </nav>
     <section class="bookshelf container">
         <ul id="book-list"></ul>
+        <ul id ="book-list"> books here </ul>
         <h3 id="book-count"></h3>
     </section>
 
@@ -22,7 +28,21 @@
         <ul id="book-list">
         </ul>
     </section>
-    <section id="book-detail-page" class="page">book detail</section>
+<section id ="book-list-page" class = "page">book list</section>
+<section id ="book-detail-page" class = "page">book list</section>
+<section id ="book-create-page" class = "page">book</section>
+<section id ="book-error-page" class = "page">error</section>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="scripts/models/book.js"></script>
+
+    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.amd.min.js"></script>
+    <script>
+    let __API_URL__ = "https://dc-th-booklist.herokuapp.com/api/v1/books"
+    // var __API_URL__ = 'http://localhost:3000/api/v1/books'
+
+    $('.error-view').hide()
 
     <section id="book-create-page" class="page">book form
 
@@ -34,7 +54,6 @@
 
     <section id="error-page" class="page">ERROR</section>
 
-      
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
@@ -43,5 +62,14 @@
     <script src="scripts/views/book-detail-page.js"></script>    
     <script src="scripts/views/book-create-page.js"></script>    
     <script src="scripts/controllers/routes.js"></script>
+      
+    errorView.initErrorPage = (err) => {
+        $('.container').hide()
+        $('.error-view').show()
+        $('#error-message').empty()
+    }
+    
+
+    <!-- document.ready (); or remember to load page by list first, the load all your functions.  -->
 </body>
 </html>

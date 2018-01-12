@@ -1,4 +1,3 @@
-
 // $.getJSON(__API_URL__).then(results => {
 //   console.log(results)
 //   results.forEach(bookData => {
