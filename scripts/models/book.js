@@ -9,3 +9,18 @@ $.get('https://dc-th-booklist.herokuapp.com')
     console.log('Always Run');
   });
 
+/////
+var app = app || {};
+const _API_URL_ = localStorage
+
+function Book () {
+
+}
+
+book.all =[]
+book.fetchAll = () => $getJSON(_API_URL_)
+book.fetchON =(id) => $getJSON(_API_URL_ + '/' + id)
+ 
+module.Book = Book
+
+(app)
