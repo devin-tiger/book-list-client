@@ -11,25 +11,40 @@ var app = app || {};
 
 (module => {
 
-  // const __API_URL__ = "https://dc-th-booklist.herokuapp.com/api/v1/books"
-  const __API_URL__ = "http://localhost:3000"
+  const __API_URL__ = "https://dc-th-booklist.herokuapp.com/api/v1/books"
+  // const __API_URL__ = "http://localhost:3000"
 
   function Book(){
 
   }
 
-  Book.all = []
-
-  Book.fetchAll = () => $.getJSON(__API_URL__).catch(err)
-  Book.fetchOne = (id) => $.getJSON(__API_URL__ + '/' + id).catch(err)
-
-  Book.deleteOne = id => {
-    return ajax({
-      url: __API_URL__ + '/' + id,
-      method: 'DELETE'
-    }).catch(err)
+  function errorCallback(err){
+    module.errorView.initErrorPage(err);
   }
 
+  Book.all = []
+
+  Book.fetchAll = () => $.getJSON(__API_URL__).catch(errorCallback)
+  Book.fetchOne = (id) => $.getJSON(__API_URL__ + '/' + id).catch(errorCallback)
+
+  Book.deleteOne = id => {
+    return $.ajax({
+      url: __API_URL__ + '/' + id,
+      method: 'DELETE'
+    }).catch(errorCallback)
+  }
+
+  Book.update = book => {
+    return $.ajax({
+      url: __API_URL__ + '/' + book.id,
+      method: 'PUT',
+      data: book
+    }).catch(errorCallback)
+  }
+
+  Book.create = book => {
+    return $.post(__API_URL__, book).catch(errorCallback)
+  }
   module.Book = Book
 
 })(app)

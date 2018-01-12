@@ -1,6 +1,6 @@
 // $doument.ready = () => { wrap entire file }
 
-page('*',(ctx,next)=> {
+page('/*',(ctx,next)=> {
     $('.page').hide()
     next()
 })
@@ -19,6 +19,10 @@ page('/books/:id', (ctx) => {
 })
 
 page('/books/create', () => app.bookCreatePage.init())
+
+page('/login', () => {
+    $('#login-page').show()
+})
 
 page('/error', () => {
     $('#error-page').show()
