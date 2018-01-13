@@ -32,7 +32,7 @@ var app = app || {};
     function submit () {
         console.log('inside of bookUpdatePage')
         let updateBook = {
-            id: $(e.target).parent().data('id'),
+            id: $('form').data('id'),
             author: $('#update-author').val(),
             title: $('#update-title').val(),
             isbn: $('#update-isbn').val(),
