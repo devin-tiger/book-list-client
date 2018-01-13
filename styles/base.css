@@ -81,7 +81,8 @@ body{
 
     img {
         width: 90%;
-        z-index: -1;
+        border: 2px solid black;
+
     }
 
     ul {
@@ -95,17 +96,9 @@ body{
     }
 
     .book-info {
-        /* display: flex;
-        align-items: flex-end; */
-        background-color: red;
-    }
-
-    .book-author {
         z-index: 1;
-        background-color: green;
+        display: flex;
+        align-items: flex-end;
+        background-color: #999;
+  
     }
-
-     .book-title {
-         z-index: 1;
-         background-color: yellow;
-     }

@@ -5,15 +5,15 @@ var app = app || {};
     bookListPage.initIndexView = (books) => {
         $('#book-list').empty()
         books.forEach(book => {
-        $('#book-list').append(`<li data-id="${book.id} class ="book-info"><p class = "book-title" ${book.title}</p>
-        <br>
-        <p class = "book-author"${book.author}</p>
-        <br>
-        <img src="${book.image_url}"></li>`)
+        $('#book-list').append(`<li data-id="${book.id}><br><div class = "book-info"><p class = "book-title"> ${book.title}</p>
+        <p class = "book-author">${book.author}</p><input type="button" value = "view details" id = "book-detail"></div>
+        <img src="${book.image_url}">
+        
+        </li>`)
         })
 
-        $('#book-list').one('click', 'li', (event) => {
-            const id = $(event.target).data('id')
+        $('#book-detail').one('click', 'input', (event) => {
+            const id = $(event.target).parent().data('id')
             page('/books/' + id)
             
         })
