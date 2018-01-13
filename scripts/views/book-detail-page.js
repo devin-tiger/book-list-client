@@ -20,7 +20,7 @@ var app = app || {};
             console.log('trying to delete book with id:', id)
 
             if (confirmed){
-            app.Book.deleteOne(id).then(() => page('/'))
+            app.Book.deleteOne(id)
             }
         })
 
