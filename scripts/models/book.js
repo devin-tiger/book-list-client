@@ -29,7 +29,7 @@ var app = app || {};
 
   Book.deleteOne = id => {
     return $.ajax({
-      url: __API_URL__ + '/' + id,
+      url: __API_URL__ + '/' + book.id,
       method: 'DELETE'
     }).catch(errorCallback)
   }

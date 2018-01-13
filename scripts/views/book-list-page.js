@@ -12,11 +12,12 @@ var app = app || {};
         <img src="${book.image_url}"></li>`)
         })
 
-        $('#book-list').on('click', 'li', (event) => {
+        $('#book-list').one('click', 'li', (event) => {
             const id = $(event.target).data('id')
             page('/books/' + id)
             
         })
+
         $('#book-list-page').show()
     }
 
