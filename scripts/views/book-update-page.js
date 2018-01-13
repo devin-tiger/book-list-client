@@ -10,7 +10,7 @@ var app = app || {};
 
     bookUpdatePage.init  = (book) => {
         $('.page').hide()
-
+        $('#update-form-div').empty()
         $('#update-form-div').append(`<form data-id="${book.id}" id="update-form" action="submit"><input class = "form-input" id = "update-title" type="text" value="${book.title}"><br>
         <input class = "form-input" id = "update-author" type="text" value="${book.author}" required><br>
         <input class = "form-input" id="update-isbn" type="text" value="${book.isbn}" required> <br>
