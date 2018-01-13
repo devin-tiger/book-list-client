@@ -36,7 +36,7 @@ page('/error', () => {
     $('#error-page').show()
 })
 
-page('/login', () => {
+page('/admin', () => {
     $('#book-admin-page').show()
     prompt('welcome admin')
     console.log('welcom admin')
