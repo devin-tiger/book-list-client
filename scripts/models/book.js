@@ -31,7 +31,8 @@ var app = app || {};
     return $.ajax({
       url: __API_URL__ + '/' + id,
       method: 'DELETE'
-    }).catch(errorCallback)
+    }).then(() => page('/'))
+    .catch(errorCallback)
   }
 
   Book.update = book => {
