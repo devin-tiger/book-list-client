@@ -8,18 +8,24 @@ var app = app || {};
     bookDetailPage.init = (book) => {
         $('#book-details').empty()
         $('.page').hide()
-        $('#book-details').append(`<li data-id="${book.id}">${book.title}:${book.author}:<img src="${book.image_url}">
-        <input type="button" id="delete-button" value="Delete"/></li>`)
+        // $('#book-details').append(`<li data-id="${book.id}">${book.title}<br>${book.author}<br><img src="${book.image_url}"><br>
+        // <input type="button" id="delete-button" data-id="${book.id}" value="Delete"/></li>`)
+        $('#book-details').append(`<li data-id="${book.id}">${book.title}<br>${book.author}<br><img src="${book.image_url}"><br>
+        <input type="button" class="delete" value="Delete"/></li>`)
         $page.show()
 
+        $('#book-details').one('click', '.delete', (e) => {
+            const id = $(e.target).parent().data('id')
+            const confirmed = confirm('Are you sure you want to delete this book?')
+            console.log('trying to delete book with id:', id)
+
+            if (confirmed){
+            app.Book.deleteOne(id).then(() => page('/'))
+            }
+        })
 
     }
 
-    $('#delete-button').one('click', 'input', (e) => {
-        const deleteId = $(e.target).data('id')
-        console.log('trying to delete book with id:', deleteId)
-        app.Book.delete(deleteId)
-    })
 
         module.bookDetailPage = bookDetailPage
 })(app)
