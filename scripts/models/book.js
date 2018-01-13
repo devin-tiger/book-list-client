@@ -37,10 +37,11 @@ var app = app || {};
 
   Book.update = book => {
     return $.ajax({
-      url: __API_URL__ + '/' + id,
+      url: __API_URL__ + '/' + book.id,
       method: 'PUT',
       data: book
-    }).catch(errorCallback)
+    }).then(() => page('/'))
+    .catch(errorCallback)
   }
 
   Book.create = book => {

@@ -15,6 +15,12 @@ page('/books/new', () => {
     app.bookCreatePage.init()
 })
 
+page('/books/update/:id', (ctx) => {
+    console.log('this is update page ')
+    app.Book.fetchOne(ctx.params.id).then(book => {
+        app.bookUpdatePage.init(book)})
+})
+
 page('/books/:id', (ctx) => {
     app.Book.fetchOne(ctx.params.id).then(book => {
         app.bookDetailPage.init(book)
