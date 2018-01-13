@@ -8,7 +8,12 @@ var app = app || {};
     bookDetailPage.init = (book) => {
         $('#book-details').empty()
         $('.page').hide()
-        $('#book-details').append(`<li data-id="${book.id}">${book.title}<br>${book.author}<br><img src="${book.image_url}"><br>${book.description}<br><input type="button" class="delete" value="Delete"/></li>`)
+        $('#book-details').append(`<li data-id="${book.id}">
+        ${book.title}<br>
+        ${book.author}<br>
+        <img src="${book.image_url}"><br>${book.description}<br>
+        <input type="button" class="delete" value="Delete"/><br>
+        <input type="button" class="update" value="Update"/></li>`)
         $page.show()
 
         $('#book-details').one('click', '.delete', (e) => {
