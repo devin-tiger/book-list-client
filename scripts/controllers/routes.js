@@ -30,4 +30,10 @@ page('/error', () => {
     $('#error-page').show()
 })
 
+page('/login', () => {
+    $('#book-admin-page').show()
+    prompt('welcome admin')
+    console.log('welcom admin')
+})
+
 page.start()
