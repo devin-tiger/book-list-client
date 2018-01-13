@@ -10,7 +10,7 @@ page('/', () => {
     })
 })
 
-page('/books/create', () => {
+page('/books/new', () => {
     console.log('this is create page')
     app.bookCreatePage.init()
 })
@@ -27,7 +27,7 @@ page('/login', () => {
 })
 
 page('/error', () => {
-    $('#book-error-page').show()
+    $('#error-page').show()
 })
 
 page.start()

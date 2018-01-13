@@ -4,11 +4,11 @@ var app = app || {};
 
     const errorPage = {}
 
-    const $page = $('#book-error-page')
+    const $page = $('error-page')
 
     
 
-    errorPage.init  = () => {
+    errorPage.initErrorPage  = () => {
         $page.show()
          console.log('create page hello')
     } 

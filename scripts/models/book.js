@@ -19,7 +19,7 @@ var app = app || {};
   }
 
   function errorCallback(err){
-    module.errorView.initErrorPage(err);
+    module.errorPage.initErrorPage(err);
   }
 
   Book.all = []
@@ -29,14 +29,14 @@ var app = app || {};
 
   Book.deleteOne = id => {
     return $.ajax({
-      url: __API_URL__ + '/' + book.id,
+      url: __API_URL__ + '/' + id,
       method: 'DELETE'
     }).catch(errorCallback)
   }
 
   Book.update = book => {
     return $.ajax({
-      url: __API_URL__ + '/' + book.id,
+      url: __API_URL__ + '/' + id,
       method: 'PUT',
       data: book
     }).catch(errorCallback)
