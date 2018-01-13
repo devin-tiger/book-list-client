@@ -11,7 +11,7 @@ var app = app || {};
     bookCreatePage.init  = () => {
         $page.show()
          console.log('create page hello')
-         $('#new-book-button').on('click', (e) => {
+         $('#new-book-button').one('click', (e) => {
             e.preventDefault();
             submit();
             console.log('button is working')
