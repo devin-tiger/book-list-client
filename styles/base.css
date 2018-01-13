@@ -64,6 +64,21 @@ body{
   span{padding-left:20px;}
   a{color:#336699;}
 
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        background-color: #666;
+        padding: 2%;
+        color: #999;
+    } 
+
+    #app-title {
+        margin: auto 2%;
+        padding: 2%;
+        font-size: 1.5em;
+    }
+
     img {
         width: 90%;
     }
@@ -71,3 +86,10 @@ body{
     ul {
         list-style-type: none;
     }
+
+    #logo {
+        width: 60px;
+        height: 67px;
+    }
+
+
