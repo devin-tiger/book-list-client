@@ -38,19 +38,14 @@
     </section>
     <section id ="book-update-page" class = "page">book update</section>
     <section id ="book-error-page" class = "page">error</section>
-    <section id = "book-create-page" class="page">book form
+    <section id = "book-create-page" class="page">add a new book
 
 <form action="submit">
-    <label for ="new-author">author</label>
-    <input id = "new-author" type="text" placeholder="author" required><br>
-    <label for ="new-title">title</label>
-    <input id = "new-title" type="text" placeholder="title"><br>
-    <label for ="new-isbn">ISBN</label>
-    <input id="new-isbn" type="text" placeholder="isbn" required> <br>
-    <label for ="new-image_url">image_url</label>
-    <input id="new-image_url" type="text" placeholder="image_url" required><br>
-    <label for ="new-description">description</label>
-    <input id="new-description" type="text" placeholder="description" required><br>  
+    <input class = "form-input" id = "new-title" type="text" placeholder="title"><br>
+    <input class = "form-input" id = "new-author" type="text" placeholder="author" required><br>
+    <input class = "form-input" id="new-isbn" type="text" placeholder="isbn" required> <br>
+    <input class = "form-input" id="new-image_url" type="text" placeholder="image url" required><br>
+    <input class = "form-input" id="new-description" type="textarea" rows="10" cols="30" placeholder="description..." required><br>  
     <button id="new-book-button" type="click">Submit</button>
 </form>
 
