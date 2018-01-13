@@ -29,7 +29,7 @@ page('/books/:id', (ctx) => {
 })
 
 page('/login', () => {
-    $('#login-page').show()
+    app.loginPage.initLoginPage()
 })
 
 page('/error', () => {
