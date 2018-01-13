@@ -59,6 +59,15 @@ body{
     margin-top:5px; 
     margin:0 auto;
   }
+
   header{display:inline-block; font-size:12px;}
   span{padding-left:20px;}
   a{color:#336699;}
+
+    img {
+        width: 90%;
+    }
+
+    ul {
+        list-style-type: none;
+    }
