@@ -26,6 +26,14 @@ var app = app || {};
             }
         })
 
+        
+        $('#book-details').one('click', '.update', (e) => {
+            const id = $(e.target).parent().data('id')
+            console.log('trying to update book with id:', id)
+            page('/books/update/' + id)
+            
+        })
+
     }
 
 
