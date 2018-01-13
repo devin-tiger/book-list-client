@@ -54,7 +54,7 @@ body{
   .menu a:hover{text-decoration:none; color:#666;}
   
   .glyphicon-home{
-    color:white; 
+    color:rgb(196, 24, 24); 
     font-size:1.5em; 
     margin-top:5px; 
     margin:0 auto;
