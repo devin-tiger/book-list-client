@@ -12,8 +12,8 @@ var app = app || {};
         ${book.title}<br>
         ${book.author}<br>
         <img src="${book.image_url}"><br>${book.description}<br>
-        <input type="button" class="delete" value="Delete"/><br>
-        <input type="button" class="update" value="Update"/></li>`)
+        <input type="button" class="delete admin" value="Delete"/><br>
+        <input type="button" class="update admin" value="Update"/></li>`)
         $page.show()
 
         $('#book-details').one('click', '.delete', (e) => {
