@@ -12,13 +12,25 @@
     <title>Devin Tiger Book List</title>
 </head>
 <body>
-    <nav>
-        <ul><a href="/">Home</a></ul>
-        <ul><a href="/books/:id">Book ID</a></ul>
-        <ul><a href="/books/create">Create</a></ul>
-        <ul><a href="/login">Login</a></ul>        
-        <ul><a href="/error">Error</a></ul>
-    </nav>
+ 
+<nav>
+    <button class="hamburger">&#9776;</button>
+    <button class="cross">&#735;</button>
+  </header>
+  <div class="menu">
+    <ul>
+      <a href="/"><li>Home</li></a>
+      <a href="/books/:id"><li>Book_ID</li></a>
+      <a href="/books/create"><li>Create</li></a>
+      <a href="/login"><li>Login</li></a>
+      <a href="/error"><li>Error</li></a>
+    </ul>
+  </div> 
+</nav>
+
+
+
+
 
     <section id ="book-list-page" class = "page">Book List
     <ul id="book-list">
@@ -59,13 +71,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     
+
     <script src="scripts/models/book.js"></script>
     <script src="scripts/views/book-list-page.js"></script>    
     <script src="scripts/views/book-detail-page.js"></script>    
     <script src="scripts/views/book-create-page.js"></script>
-    <script src="scripts/views/book-update-page.js"></script>         
+    <script src="scripts/views/book-update-page.js"></script>       
     <script src="scripts/controllers/routes.js"></script>
 
+    <script src="scripts/views/hamburger.js"></script>
     <!-- document.ready (); or remember to load page by list first, the load all your functions.  -->
 </body>
 </html>
