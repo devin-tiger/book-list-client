@@ -5,9 +5,9 @@ var app = app || {};
     bookListPage.initIndexView = (books) => {
         $('#book-list').empty()
         books.forEach(book => {
-        $('#book-list').append(`<li data-id="${book.id}">${book.title}
+        $('#book-list').append(`<li data-id="${book.id}"><p class = "book-title" ${book.title}</p>
         <br>
-        ${book.author}
+        <p class = "book-author"${book.author}</p>
         <br>
         <img src="${book.image_url}"></li>`)
         })
