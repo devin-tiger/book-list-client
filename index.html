@@ -24,7 +24,8 @@
             <ul>
               <a href="/"><li>View All Books</li></a>
               <a href="/books/new"><li>Add A New Book</li></a>
-              <a href="/login" class="logged-in") ><li>Login</li></a>
+              <a href="/login" class="login" ><li>Login</li></a>
+              <a href="/logout" class="logout" ><li>Logout</li></a>
             </ul>
           </div> 
 
@@ -55,8 +56,9 @@
 
     <section id="login-Page" class="page logged-in">Login Me In
         <form action="login">
-            <p>please enter your passphrase</p>
-            <input type="text" placeholder="password" id="password" required>
+            <p>please enter your password</p>
+            <p id="invalid-pass">password is incorrect</p>
+            <input type="password" placeholder="password" id="password" required>
             <button for ="login" type="submit" id="pass-button">login</button>
         </form>
 

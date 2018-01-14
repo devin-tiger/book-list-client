@@ -1,12 +1,3 @@
-// $.getJSON(__API_URL__).then(results => {
-//   console.log(results)
-//   results.forEach(bookData => {
-//     $('#book-list').append(`<p>Book Title: ${bookData.title} <br> Book Author: ${bookData.author}</p>`)
-//   })
-
-//   $('#book-count').append(`<p>Book Count: ${results.length}</p>`)
-// })
-
 var app = app || {};
 
 (module => {
@@ -46,6 +37,21 @@ var app = app || {};
 
   Book.create = book => {
     return $.post(__API_URL__, book).catch(errorCallback)
+  }
+
+  Book.verifyAdmin = () =>{
+    let realToken = '1234'
+    let getToken = localStorage.getItem('Token');
+    let token = JSON.parse(getToken)
+    if (token === realToken) {
+        $('.admin').show()
+        $('.login').hide()
+        $('.logout').show()  
+    }else{
+        $('.admin').hide()
+        $('.logout').hide()
+        $('.login').show() 
+    }
   }
 
   

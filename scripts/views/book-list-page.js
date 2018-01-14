@@ -6,7 +6,7 @@ var app = app || {};
         $('#book-list').empty()
         books.forEach(book => {
         $('#book-list').append(`<li class = "book-container" data-id="${book.id}">
-        <img src="${book.image_url}">        
+        <img class = "book-image" src="${book.image_url}">        
         <div class = "book-info">
         <div class = "inner">${book.title}<br>
         ${book.author}<br>
