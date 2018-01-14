@@ -10,6 +10,7 @@ page('/', () => {
     })
 })
 
+
 page('/books/new', () => {
     console.log('this is create page')
     app.bookCreatePage.init()
@@ -28,9 +29,10 @@ page('/books/:id', (ctx) => {
     
 })
 
-page('/login', () => {
-    app.loginPage.initLoginPage()
+page('/login', () =>{
+    app.loginPage.init()
 })
+
 
 page('/error', () => {
     $('#error-page').show()
