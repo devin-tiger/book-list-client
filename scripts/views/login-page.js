@@ -6,7 +6,7 @@ var app = app || {};
 
     const $page = $('#login-Page')
 
-    loginPage.initLoginPage = () => {
+    loginPage.init = () => {
         $page.show()
          console.log('log page')
         //  $('#new-book-button').one('click', (e) => {
@@ -15,7 +15,7 @@ var app = app || {};
         //     console.log('button is working')
         // })
 
-    // } 
+    } 
 
     // function submit () {
     //     console.log('inside of bookCreatePage')
@@ -31,7 +31,7 @@ var app = app || {};
     //     app.Book.create(newBook)
     //     .then(() => page('/'))
 
-    }
+    // }
 
     module.loginPage = loginPage
 
