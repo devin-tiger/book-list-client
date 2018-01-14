@@ -2,13 +2,7 @@
 page('/*',(ctx,next)=> {
     $('.page').hide()
     $('.admin').hide()
-    let realToken = '1234'
-    let getToken = localStorage.getItem('Token');
-    let token = JSON.parse(getToken)
-    if (token === realToken) {
-        $('.admin').show()
-        $('.logged-in').hide() 
-    }else{$('.admin').hide()}
+    app.Book.verifyAdmin()
 
     next()
 })
@@ -40,6 +34,11 @@ page('/books/:id', (ctx) => {
 
 page('/login', () =>{
     app.loginPage.init()
+})
+
+page('/logout', () =>{
+    localStorage.clear()
+    page('/')
 })
 
 

@@ -8,6 +8,7 @@ var app = app || {};
 
     loginPage.init = () => {
         $page.show()
+        $('#invalid-pass').hide()
          console.log('log page')
          $('#pass-button').one('click', (e) => {
             e.preventDefault();
@@ -21,14 +22,15 @@ var app = app || {};
         let realPass = '1234'
         let userPass = $('#password').val()
         console.log(userPass)
-            storePassword(userPass)
-            function testPassword (userPass){
-                if (userPass === realPass){
-                    console.log('passed')
-                    page('/')
+        function testPassword (userPass){
+            if (userPass === realPass){
+                storePassword(userPass)
+                console.log('passed')
+                page('/')
                 }else{
-                    alert('oops try again')
                     loginPage.init()
+                    $('#invalid-pass').show()
+                    
                 }
             }
             testPassword(userPass)
