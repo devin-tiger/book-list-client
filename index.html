@@ -24,16 +24,15 @@
             <ul>
               <a href="/"><li>View All Books</li></a>
               <a href="/books/new"><li>Add A New Book</li></a>
-              <a href="/home/tigerhsu/code-301/tiger-devin/book-list-client/scripts/views/admin-view.js"><li>Administrator page</li></a>
-              <a href="/login"><li>Login</li></a>
+              <a href="/login" class="logged-in") ><li>Login</li></a>
             </ul>
           </div> 
 
-    <section id ="book-list-page" class = "page">Book List
+    <section id ="book-list-page" class = "page">book List
     <ul id="book-list">
     </ul>
     </section>
-    <section id = "book-detail-page" class = "page">Book Detail
+    <section id = "book-detail-page" class = "page">book Detail
         <ul id = "book-details">
         </ul>
     </section>
@@ -52,14 +51,13 @@
     <button id="new-book-button" type="click">Submit</button>
 </form>
     </section>
-    <section id="book-admin-page" class="page">Admin</section>
     <section id="error-page" class="page">ERROR</section>
 
-    <section id="login-Page" class="page">Login Me In
+    <section id="login-Page" class="page logged-in">Login Me In
         <form action="login">
-            <input type="text" placeholder="username" required>
-            <input type="text" placeholder="password" required>
-            <button for ="login" type="submit">login</button>
+            <p>please enter your passphrase</p>
+            <input type="text" placeholder="password" id="password" required>
+            <button for ="login" type="submit" id="pass-button">login</button>
         </form>
 
     </section>
@@ -79,7 +77,6 @@
     <script src="scripts/views/book-detail-page.js"></script>    
     <script src="scripts/views/book-create-page.js"></script>
     <script src="scripts/views/book-update-page.js"></script>
-    <script src="scripts/views/admin-view.js"></script>  
     <script src="scripts/views/login-page.js"></script>      
         
     <script src="scripts/controllers/routes.js"></script>

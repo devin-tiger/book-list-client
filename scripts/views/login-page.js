@@ -9,29 +9,39 @@ var app = app || {};
     loginPage.init = () => {
         $page.show()
          console.log('log page')
-        //  $('#new-book-button').one('click', (e) => {
-        //     e.preventDefault();
-        //     submit();
-        //     console.log('button is working')
-        // })
+         $('#pass-button').one('click', (e) => {
+            e.preventDefault();
+            submit();
+            console.log('login button is working')
+        })
 
     } 
+        function submit () {
+        console.log('inside of login page')
+        let realPass = '1234'
+        let userPass = $('#password').val()
+        console.log(userPass)
+            storePassword(userPass)
+            function testPassword (userPass){
+                if (userPass === realPass){
+                    console.log('passed')
+                    page('/')
+                }else{
+                    alert('oops try again')
+                    loginPage.init()
+                }
+            }
+            testPassword(userPass)
 
-    // function submit () {
-    //     console.log('inside of bookCreatePage')
-    //     let newBook = {
-    //         author: $('#new-author').val(),
-    //         title: $('#new-title').val(),
-    //         isbn: $('#new-isbn').val(),
-    //         image_url: $('#new-image_url').val(),
-    //         description: $('#new-description').val(),
-            
-    //     }
-    //     console.log(newBook)
-    //     app.Book.create(newBook)
-    //     .then(() => page('/'))
+    }
 
-    // }
+    function storePassword (userPass){
+        localStorage.setItem('Token', JSON.stringify(userPass))
+    }
+
+
+
+
 
     module.loginPage = loginPage
 

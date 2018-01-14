@@ -1,6 +1,15 @@
 
 page('/*',(ctx,next)=> {
     $('.page').hide()
+    $('.admin').hide()
+    let realToken = '1234'
+    let getToken = localStorage.getItem('Token');
+    let token = JSON.parse(getToken)
+    if (token === realToken) {
+        $('.admin').show()
+        $('.logged-in').hide() 
+    }else{$('.admin').hide()}
+
     next()
 })
 
@@ -36,12 +45,6 @@ page('/login', () =>{
 
 page('/error', () => {
     $('#error-page').show()
-})
-
-page('/admin', () => {
-    $('#book-admin-page').show()
-    prompt('welcome admin')
-    console.log('welcom admin')
 })
 
 page.start()
